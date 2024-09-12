@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+/* CSS Custom Properties */
+:root {
+  --main-bg: white;
+  --top-menu-bg: #f1a1b9;
+  --sub-menu-bg: pink;
+}
+
+body {
+  font-family: Tahoma, Geneva, sans-serif;
+  height: 100vh;
+  margin: 50;
+  display: grid;
+  grid-template-rows: 3rem auto;
+  color: grey;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  line-height: 3rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+#top-menu a:hover {
+  background-color: var(--sub-menu-bg);
+}
+
+header, #top-menu {
+	position: relative;
+}
+#top-menu {
+	z-index: 20;
+}
+#sub-menu {
+	width: 100%;
+	z-index: 10;
+	transition: top 0.5s ease-out;
+}
+#sub-menu a:hover {
+	background-color: var(--top-menu-bg);
+}
+nav a.active {
+	background-color: var(--sub-menu-bg);
+	color: var(--main-bg);
+}
+#mainBrand{padding-top: 3%;
+
+}
+
+/* Style the search submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #f1a1b9;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: pink;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.carousel-inner {
+  padding: 10em;
+}
+.card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #e1e1e1;
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media (min-width: 768px) {
+  .carousel-item {
+    margin-right: 0;
+    flex: 0 0 20%;
+    display: block;
+    flex-direction:column;
+  }
+  .carousel-inner {
+    display: flex;
+  }
+}
+.card .img-wrapper {
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.description{
+  position: absolute;
+  padding-top: 15px;
+  right: 10px;
+  flex-direction: row;
+  width: 10em;
+  
+}
+.card img {
+  max-height: 100%;
+
+}
+@media (max-width: 767px) {
+  .card .img-wrapper {
+    height: 5em;
+  }
+}
+
+
+.favourite-button {
+  position: absolute;
+  top: 10px;
+  right: 3px;
+  top: 3px;
+  z-index: 99999;
+  width: 30px;
+  height: 30px;
+  color: lightpink;
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+.favourite-button:hover {
+  color: red;
+  width: 36px;
+  height: 36px;
+  top: 7px;
+  right: 12px;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
